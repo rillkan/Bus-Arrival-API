@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bus Arrival App</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>showArrayBusses2</h1>
+  <img src="cutebus.jpg">
+  <label for="busStopId">Bus Stop ID:</label>
+  <input type="text" id="busStopId" name="busStopId" placeholder="Enter bus stop ID">
+  <button id="submit" onclick="getBusTiming()">Show Arrival</button>
+
+  <div id="busContainer" style="display: none;">
+    <hr width="100%" size="2">
+  </div>
+
+
+  <div id="arrivalInfo"></div>
+  <script>
+    const busStopIdInput = document.getElementById("busStopId");
+    const arrivalInfo = document.getElementById("arrivalInfo");
+
+    async function fetchBusArrival(busStopId) {
+      const response = await fetch(`https://arrivelah2.busrouter.sg/?id=${busStopId}`);
+      if (response.ok) {
+        busContainer.style.display = "none"
+        const data = await response.json();
+        /*return data;*/
+        console.log(data)
+
+      } else {
+        throw new Error("Error fetching bus arrival data.");
+      }
+    }
+
+    fetchBusArrival(18141) //Test: 83139 //18141
+
+  </script>
+</body>
+
+</html>

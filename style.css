@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+
+input {
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+}
+
+.buttons-row {
+  flex-direction: row;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  width: 150px;
+  background-color: rgb(97, 201, 229);
+  color: white;
+  border: none;
+  border: 5px solid rgb(10, 180, 237);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s,
+}
+
+button:hover {
+  transform: translateY(-5px);
+  background-color: rgb(10, 180, 237);
+  border: 5px solid rgb(97, 201, 229);
+}
+
+label {
+  margin-bottom: 20px;
+}
+
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  margin-top: 30px;
+}
+
+table td,
+table th {
+  padding: 8px;
+  width: 200px
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-300px)
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+img {
+  height: 300px;
+
+  animation: slideInLeft 2s ease-in 0s 1;
+  animation-name: slideInLeft;
+
+  /*
+    animation-duration: 2s;
+  default: 0s
+  animation-timing-function: ease-in;
+  default: ease
+  animation-delay: 0s;
+  default: 0s
+  animation-iteration-count: 1;
+  default: 1
+  animation-direction: normal;
+  default: normal
+  */
+
+
+}
